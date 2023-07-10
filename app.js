@@ -5,7 +5,7 @@ document.addEventListener('copy', function (event) {
     // Toast element setect using id
     var toast = document.getElementById('toast');
     // Show toast message
-    toast.textContent = 'Copying content is not allowed.';
+    // toast.textContent = 'Copying content is not allowed.';
     // Toast element add class
     toast.classList.add('show');
 
