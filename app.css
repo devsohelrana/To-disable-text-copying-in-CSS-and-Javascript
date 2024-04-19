@@ -1,61 +1,59 @@
-#toast {
-    display: none;
-    align-items: center;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #000000;
-    background: #ffffff;
-    padding: 5px 20px;
-    border-radius: 10px;
-    border-left: 5px solid #df1885;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+
+.toast {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: #000000;
+  background: #ffffff;
+  padding: 5px 20px;
+  border-radius: 10px;
+  border-left: 5px solid #df1885;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  animation: show_toast 1s ease forwards;
 }
 
-#toast.hide {
-  display: flex;
+@keyframes show_toast {
+  0% {
+    transform: translateX(-100%);
+  }
+  40% {
+    transform: translateX(10%);
+  }
+  80%,
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+.toast.hide {
   animation: hide_toast 1s ease forwards;
 }
 @keyframes hide_toast {
-  0%{
+  0% {
     transform: translateX(-50px);
   }
-  20%{
+  20% {
     transform: translateX(100px);
   }
-  40%{
+  40% {
     transform: translateX(-200px);
   }
-  60%{
+  60% {
     transform: translateX(300px);
   }
-  80%, 100%{
+  80%,
+  100% {
     opacity: 0;
     pointer-events: none;
     transform: translateX(-100%);
   }
 }
 
-#toast.show {
-  display: flex;
-    animation: show_toast 1s ease forwards;
-}
-
-@keyframes show_toast {
-    0%{
-      transform: translateX(-100%);
-    }
-    40%{
-      transform: translateX(10%);
-    }
-    80%, 100%{
-      transform: translateX(20px);
-    }
-}
-
-
-#toast .copy {
-    width: 30px;
-    height: 25px;
-    margin-right: 8px
+.toast i {
+  font-size: 22px;
+  color: #df1885;
+  margin-right: 10px;
 }
